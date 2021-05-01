@@ -1,0 +1,109 @@
+{% extends 'app/index.html' %}
+{% load static %}
+    <h1>This is profile<h1>
+{% block main-content %}
+
+
+<div class="sidenav" style="margin-top:100px">
+    <ul class="list-group">
+        <li class="list-group-item">Sort By</li>
+    </ul>
+    {% if flag == 7 %}
+    <a href="{% url 'product'  %}" class="w3-bar-item w3-button {{active}}">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+    {% elif  flag == 1 %}
+    <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button {{active}}">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+  {% elif flag == 2 %}
+   <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button {{active}}">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+  {% elif flag == 5 %}
+     <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button ">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button {{active}}">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+  {% elif flag == 3 %}
+   <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button ">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button ">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button {{active}}">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+  {% elif flag == 6 %}
+   <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button ">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button ">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button {{active}}">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button">Corn</a>
+  {% elif flag == 4 %}
+    <a href="{% url 'product'  %}" class="w3-bar-item w3-button ">Random</a>
+    <a href="{% url 'productdata' 'Pan' %}" class="w3-bar-item w3-button ">Pan</a>
+    <a href="{% url 'productdata' 'Burst' %}" class="w3-bar-item w3-button ">Burst</a>
+  <a href="{% url 'productdata' 'Onion' %}" class="w3-bar-item w3-button ">Onion</a>
+    <a href="{% url 'productdata' 'Hot' %}" class="w3-bar-item w3-button">Hot</a>
+  <a href="{% url 'productdata' 'Paneer' %}" class="w3-bar-item w3-button ">Paneer</a>
+  <a href="{% url 'productdata' 'Corn' %}" class="w3-bar-item w3-button {{active}}">Corn</a>
+
+{% endif %}
+</div>
+<div class="card" style="margin-top:150px">
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+        {% for f in data1 %}
+            <div class="row p-2 bg-white border rounded">
+                <a href="{% url 'detaildata' f.id %}"><div class="col-md-3 mt-1"><img  src="{{f.product_image.url}}" height="400px"></div><a>
+                <div class="col-md-6 mt-1">
+                    <h5>{{f.product.title}}</h5>
+                    <div class="d-flex flex-row">
+                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                    </div>
+                    <div class="mt-1 mb-1 spec-1"><span>Faster Delivery</span><span class="dot"></span><span></span><span class="dot"></span><span>Best Taste<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span>Unique taste</span><span class="dot"></span><span>For everyone</span><span class="dot"></span><span>Casual<br></span></div>
+                    <p class="text-justify text-truncate para mb-0">{{f.product.description}}<br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">${{f.product.price}}</h4><span class="strike-text"></span>
+                    </div>
+                    <h6 class="text-success">Free Delivary</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                </div>
+                
+            </div>
+            <br>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock main-content %}
+
+
+
+detail product view creations

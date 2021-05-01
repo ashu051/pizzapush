@@ -1,0 +1,148 @@
+
+{% extends 'app/index.html' %}
+{% load static %}
+
+{% block main-content %}
+
+
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{myp.product_image.url}}" /></div>
+						</div>
+						
+					</div>
+					<div class="details col-md-6">
+					{% comment %} {{c.rating}} {% endcomment %}
+		{% comment %} rating given by user start {% endcomment %}
+		<div class="stars">	
+			<div class="p-3 mb-2 bg-primary text-white">Click On the Stars Below  to change/ update /Give Rating</div>
+
+
+			
+			{% if c == 1 %}
+	<a href="{% url 'addstar' myp.id 1 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 2 %}"><span class="fa fa-star "></span></a>
+								<a href="{% url 'addstar' myp.id 3 %}"><span class="fa fa-star "></span></a>
+								<a href="{% url 'addstar' myp.id 4 %}"><span class="fa fa-star"></span></a>
+								<a href="{% url 'addstar'  myp.id 5 %}"><span class="fa fa-star"></span></a>
+{% elif c == 2 %}
+			<a href="{% url 'addstar' myp.id 1 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 2 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 3 %}"><span class="fa fa-star"></span></a>
+								<a href="{% url 'addstar' myp.id 4 %}"><span class="fa fa-star"></span></a>
+								<a href="{% url 'addstar'  myp.id 5 %}"><span class="fa fa-star"></span></a>
+{% elif c == 3 %}
+			<a href="{% url 'addstar' myp.id 1 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 2 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 3 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 4 %}"><span class="fa fa-star"></span></a>
+								<a href="{% url 'addstar'  myp.id 5 %}"><span class="fa fa-star"></span></a>
+			{% elif c == 4 %}
+			<a href="{% url 'addstar' myp.id 1 %}"><span class="fa fa-star checked "></span></a>
+								<a href="{% url 'addstar' myp.id 2 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 3 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 4 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar'  myp.id 5 %}"><span class="fa fa-star"></span></a>
+{% elif c == 5 %}
+				<a href="{% url 'addstar' myp.id 1 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 2 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 3 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar' myp.id 4 %}"><span class="fa fa-star checked"></span></a>
+								<a href="{% url 'addstar'  myp.id 5 %}"><span class="fa fa-star checked"></span></a>
+
+	{% endif %}
+</div>
+
+{% comment %} Rating given by user done  {% endcomment %}
+
+	{% comment %} Rating Given BY all users {% endcomment %}
+ {% if messages %}
+        {%  for message in messages %}
+            {% if message.tags %}{{message.tags}} {% endif %}
+            <span class="success">{{message}}</span>
+            {% endfor %}
+    {% endif %} 
+				
+							<div class="p-3 mb-2 bg-danger text-white">Rating Given by All User</div>
+							<div class="stars">	
+						{% if value <= 20 %}
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			{% endif %}
+{% if value > 20 and value <= 40 %}
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			{% endif %}
+{% if value > 40  and value <= 60 %}
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			<span class="fa fa-star"></span>
+			{% endif %}
+			{% if value > 60 and value <= 90 %}
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star"></span>
+			{% endif %}
+{% if value > 90 and value <= 100 %}
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			<span class="fa fa-star checked"></span>
+			{% endif %}
+</div>	
+<div class="alert alert-{{ messages.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+</div>
+
+		{% comment %} Rating Given  by all user done					 {% endcomment %}
+						
+
+
+
+
+
+						<p class="product-description">{{myp.description}}</p>
+						<h4 class="price">current price: <span>{{myp.product_price}}</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong></strong></p>
+					
+					
+						<div class="action">
+						<form action="/addtocart" class="d-inline">
+        <input type="hidden" name="prod_id" value={{myp.id}}>
+		
+        <button type="submit" class="add-to-cart btn btn-default"> Add to cart</button>
+    </form> 
+	
+	</div>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock main-content %}
+
+
+
+
