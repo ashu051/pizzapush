@@ -1,1 +1,1 @@
-web: waitress-serve --port=8000 pizzaplace.wsgi:application
+web: gunicorn --bind 0.0.0.0:$PORT pizzaplace.wsgi
