@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT pizzaplace.wsgi:application
+web: gunicorn pizzaplace.wsgi --log-file -
