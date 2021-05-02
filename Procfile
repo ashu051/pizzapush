@@ -1,1 +1,1 @@
-web: waitress-serve --port=8000 pizzaplace.wsgi:application
+web: waitress-serve --port=$PORT pizzaplace.wsgi:application
