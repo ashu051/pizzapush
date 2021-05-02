@@ -24,7 +24,7 @@ SECRET_KEY = '888u5g!(q5mh-_4=ts18tlgo81sztubo*_wlgbv4dy-81^v-fo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['pizzakingplace.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
