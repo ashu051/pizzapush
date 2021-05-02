@@ -133,3 +133,4 @@ MEDIA_ROOT  =    BASE_DIR / 'media'
 #     'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework.authentication.BasicAuthentication'],
 #     'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.AllowAny']
 # }
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
